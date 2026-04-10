@@ -1,0 +1,1 @@
+public class ClaimService{public static Claim__c submit(Policy__c p,Decimal a){if(p.Status__c!="Active")throw new ApexPages.Message(ApexPages.Severity.ERROR,"Inactive policy"); Claim__c c=new Claim__c(Policy__c=p.Id,Claim_Amount__c=a,Status__c="Open",Claim_Number__c="CLM-"+Datetime.now().getTime()); insert c; return c;}}

@@ -1,0 +1,21 @@
+trigger PolicyTrigger on Policy__c (before insert, after update) {
+    if (Trigger.isBefore && Trigger.isInsert) {
+        for (Policy__c p : Trigger.new) {
+            if (String.isBlank(p.Policy_Number__c)) {
+                p.Policy_Number__c = 'POL-' + Datetime.now().format('yyyyMMddHHmmss');
+            }
+        }
+    }
+    
+    if (Trigger.isAfter && Trigger.isUpdate) {
+        for (Integer i = 0; i < Trigger.new.size(); i++) {
+            Policy__c oldP = Trigger.old[i];
+            Policy__c newP = Trigger.new[i];
+            
+            if (oldP.Status__c != newP.Status__c || oldP.Payment_Confirmed__c != newP.Payment_Confirmed__c) {
+                AuditService.logPolicyHistory(newP.Id, 'Status Change', oldP.Status__c, newP.Status__c,
+                newP.Cancellation_Reason__c != null ? newP.Cancellation_Reason__c : 'N/A');
+            }
+        }
+    }
+}

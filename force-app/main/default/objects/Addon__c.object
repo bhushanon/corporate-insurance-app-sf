@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Add-on</label>
+    <pluralLabel>Add-ons</pluralLabel>
+
+    <nameField>
+        <label>Add-on Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+
+    <!-- Additional_Premium__c (Currency) -->
+    <fields>
+        <fullName>Additional_Premium__c</fullName>
+        <label>Additional Premium</label>
+        <type>Currency</type>
+        <required>true</required>
+        <precision>18</precision>
+        <scale>2</scale>
+    </fields>
+
+    <!-- Linked_Product__c (Lookup to Insurance_Product__c) -->
+    <fields>
+        <fullName>Linked_Product__c</fullName>
+        <label>Linked Product</label>
+        <type>Lookup</type>
+        <referenceTo>Insurance_Product__c</referenceTo>
+        <relationshipLabel>Add-ons</relationshipLabel>
+        <relationshipName>Addons</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Is_Active__c -->
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+        <defaultValue>true</defaultValue>
+    </fields>
+
+    <!-- Description__c (Long Text) -->
+    <fields>
+        <fullName>Description__c</fullName>
+        <label>Description</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

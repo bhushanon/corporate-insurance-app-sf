@@ -1,0 +1,13 @@
+<apex:page controller="PolicyController" renderAs="pdf">
+    <apex:pageBlock title="Corporate Insurance Policy Certificate">
+        <h1>Policy Number: {!policy.Policy_Number__c}</h1>
+        <p>
+            <b>Insured:</b> {!policy.Customer__r.Name}</p>
+        <p>
+            <b>Premium:</b> ₹{!policy.Premium_Amount__c}</p>
+        <p>
+            <b>Status:</b> {!policy.Status__c}</p>
+        <p>
+            <b>Valid From:</b> {!policy.Policy_Start_Date__c} To {!policy.Policy_End_Date__c}</p>
+    </apex:pageBlock>
+</apex:page>

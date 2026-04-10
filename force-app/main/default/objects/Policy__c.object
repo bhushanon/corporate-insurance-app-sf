@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Policy</label>
+    <pluralLabel>Policies</pluralLabel>
+
+    <nameField>
+        <label>Policy Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- Policies contain sensitive customer/employee data -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Policy_Number__c (legacy key / external id) -->
+    <fields>
+        <fullName>Policy_Number__c</fullName>
+        <label>Policy Number</label>
+        <type>Text</type>
+        <length>50</length>
+        <required>true</required>
+        <unique>true</unique>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+    </fields>
+
+    <!-- Employer__c -->
+    <fields>
+        <fullName>Employer__c</fullName>
+        <label>Employer</label>
+        <type>Lookup</type>
+        <referenceTo>Employer__c</referenceTo>
+        <relationshipLabel>Policies</relationshipLabel>
+        <relationshipName>Policies</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <!-- Customer__c (member / insured) -->
+    <fields>
+        <fullName>Customer__c</fullName>
+        <label>Customer</label>
+        <type>Lookup</type>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Policies</relationshipLabel>
+        <relationshipName>Policies</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Insurance_Product__c -->
+    <fields>
+        <fullName>Insurance_Product__c</fullName>
+        <label>Insurance Product</label>
+        <type>Lookup</type>
+        <referenceTo>Insurance_Product__c</referenceTo>
+        <relationshipLabel>Policies</relationshipLabel>
+        <relationshipName>Policies</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Insurance_Enrollment__c (optional) -->
+    <fields>
+        <fullName>Insurance_Enrollment__c</fullName>
+        <label>Insurance Enrollment</label>
+        <type>Lookup</type>
+        <referenceTo>Insurance_Enrollment__c</referenceTo>
+        <relationshipLabel>Policies</relationshipLabel>
+        <relationshipName>Policies</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <!-- Policy_Status__c -->
+    <fields>
+        <fullName>Policy_Status__c</fullName>
+        <label>Policy Status</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Issued</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lapsed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancelled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Matured</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Dates -->
+    <fields>
+        <fullName>Effective_Date__c</fullName>
+        <label>Effective Date</label>
+        <type>Date</type>
+        <required>true</required>
+    </fields>
+
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <label>Expiry Date</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Issued_On__c</fullName>
+        <label>Issued On</label>
+        <type>DateTime</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Cancelled_On__c</fullName>
+        <label>Cancelled On</label>
+        <type>DateTime</type>
+        <required>false</required>
+    </fields>
+
+    <!-- Coverage -->
+    <fields>
+        <fullName>Coverage_Amount__c</fullName>
+        <label>Coverage Amount</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Term_Years__c</fullName>
+        <label>Term (Years)</label>
+        <type>Number</type>
+        <precision>3</precision>
+        <scale>0</scale>
+        <required>false</required>
+    </fields>
+
+    <!-- Premiums -->
+    <fields>
+        <fullName>Monthly_Premium__c</fullName>
+        <label>Monthly Premium</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Annual_Premium__c</fullName>
+        <label>Annual Premium</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Premium_Frequency__c</fullName>
+        <label>Premium Frequency</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>One-time</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <fields>
+        <fullName>Premium_Due_Date__c</fullName>
+        <label>Premium Due Date</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <label>Renewal Date</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <!-- Legacy / integration -->
+    <fields>
+        <fullName>Source_System__c</fullName>
+        <label>Source System</label>
+        <type>Text</type>
+        <length>40</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Source_System_Id__c</fullName>
+        <label>Source System Id</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Is_Legacy__c</fullName>
+        <label>Is Legacy</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+
+    <!-- Notes / termination -->
+    <fields>
+        <fullName>Termination_Reason__c</fullName>
+        <label>Termination Reason</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>6</visibleLines>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

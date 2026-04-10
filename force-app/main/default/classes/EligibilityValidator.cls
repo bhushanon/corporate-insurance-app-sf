@@ -1,0 +1,1 @@
+public class EligibilityValidator{public static String check(Customer__c c,Insurance_Product__c p){if(c==null||c.Employer__c==null)return "Invalid employee"; Employer__c e=[SELECT Status__c FROM Employer__c WHERE Id=:c.Employer__c]; if(e.Status__c!="Active")return "Employer inactive"; if(!p.Is_Active__c)return "Product inactive"; return null;}}

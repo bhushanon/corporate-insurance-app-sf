@@ -1,0 +1,1 @@
+public class PremiumCalculator{public static Decimal calc(Insurance_Product__c p,List<Addon__c>a){Decimal t=p!=null?p.Base_Premium__c:0; if(a!=null)for(Addon__c x:a)t+=x.Additional_Premium__c; return t;}}

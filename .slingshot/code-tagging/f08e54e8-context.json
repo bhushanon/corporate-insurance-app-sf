@@ -1,0 +1,31 @@
+{
+  "filename": "BillingService.cls",
+  "path": "force-app\\main\\default\\classes\\BillingService.cls",
+  "version": "1.1",
+  "files": {
+    "bb88d91f": {
+      "value": [
+        {
+          "programming_language": "Apex",
+          "fileName": "BillingService.cls",
+          "relativeFilePath": "force-app/main/default/classes/BillingService.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "promptMessage": {
+    "ad531fab": {
+      "value": "format these apex classes"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

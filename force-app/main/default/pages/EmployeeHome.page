@@ -1,0 +1,13 @@
+<!-- EmployeeHome.page -->
+<apex:page controller="EmployeeDashboardController" tabStyle="Custom">
+    <apex:pageBlock title="My Insurance Dashboard">
+        <apex:pageBlockTable value="{!myPolicies}" var="p">
+            <apex:column headerValue="Policy Number" value="{!p.Policy_Number__c}" />
+            <apex:column headerValue="Status" value="{!p.Status__c}" />
+            <apex:column headerValue="Premium" value="{!p.Premium_Amount__c}" />
+            <apex:column>
+                <apex:commandButton value="View" action="{!startEnrollment}" /></apex:column>
+        </apex:pageBlockTable>
+        <apex:commandButton value="Enroll Now" action="{!startEnrollment}" />
+    </apex:pageBlock>
+</apex:page>

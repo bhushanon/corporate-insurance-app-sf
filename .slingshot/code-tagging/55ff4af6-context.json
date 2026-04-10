@@ -1,0 +1,86 @@
+{
+  "filename": "ClaimTriggerHandler.cls",
+  "path": "force-app\\main\\default\\triggers\\ClaimTriggerHandler.cls",
+  "version": "1.1",
+  "files": {
+    "70aea05e": {
+      "value": [
+        {
+          "programming_language": "Apex",
+          "fileName": "BillingService.cls",
+          "relativeFilePath": "force-app/main/default/classes/BillingService.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            19
+          ]
+        },
+        {
+          "programming_language": "Apex",
+          "fileName": "ClaimService.cls",
+          "relativeFilePath": "force-app/main/default/classes/ClaimService.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            1
+          ]
+        },
+        {
+          "programming_language": "Apex",
+          "fileName": "EligibilityValidator.cls",
+          "relativeFilePath": "force-app/main/default/classes/EligibilityValidator.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            1
+          ]
+        },
+        {
+          "programming_language": "Apex",
+          "fileName": "InsuranceSObjectUtil.cls",
+          "relativeFilePath": "force-app/main/default/classes/InsuranceSObjectUtil.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            50
+          ]
+        },
+        {
+          "programming_language": "Apex",
+          "fileName": "PolicyService.cls",
+          "relativeFilePath": "force-app/main/default/classes/PolicyService.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            1
+          ]
+        },
+        {
+          "programming_language": "Apex",
+          "fileName": "PremiumCalculator.cls",
+          "relativeFilePath": "force-app/main/default/classes/PremiumCalculator.cls",
+          "startLine": [
+            1
+          ],
+          "endLine": [
+            1
+          ]
+        }
+      ]
+    }
+  },
+  "promptMessage": {
+    "40d8dacb": {
+      "value": "format and beautify all files and auto save these"
+    }
+  },
+  "localPrompts": {},
+  "remotePrompts": {},
+  "figma": {},
+  "jira": {}
+}

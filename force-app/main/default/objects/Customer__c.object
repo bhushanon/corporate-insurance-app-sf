@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Customer</label>
+    <pluralLabel>Customers</pluralLabel>
+
+    <nameField>
+        <label>Customer Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- PII / customer data -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Unique customer reference (legacy key / external id) -->
+    <fields>
+        <fullName>Customer_Number__c</fullName>
+        <label>Customer Number</label>
+        <type>Text</type>
+        <length>50</length>
+        <required>false</required>
+        <unique>true</unique>
+        <caseSensitive>false</caseSensitive>
+        <externalId>true</externalId>
+    </fields>
+
+    <!-- Basic identity -->
+    <fields>
+        <fullName>First_Name__c</fullName>
+        <label>First Name</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Last_Name__c</fullName>
+        <label>Last Name</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Date_Of_Birth__c</fullName>
+        <label>Date of Birth</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Gender__c</fullName>
+        <label>Gender</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Male</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Female</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Prefer not to say</fullName>
+                <default>true</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Contact -->
+    <fields>
+        <fullName>Primary_Email__c</fullName>
+        <label>Primary Email</label>
+        <type>Email</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Secondary_Email__c</fullName>
+        <label>Secondary Email</label>
+        <type>Email</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Phone__c</fullName>
+        <label>Phone</label>
+        <type>Phone</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Mobile__c</fullName>
+        <label>Mobile</label>
+        <type>Phone</type>
+        <required>false</required>
+    </fields>
+
+    <!-- Address (simple legacy fields) -->
+    <fields>
+        <fullName>Address_Line_1__c</fullName>
+        <label>Address Line 1</label>
+        <type>Text</type>
+        <length>255</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Address_Line_2__c</fullName>
+        <label>Address Line 2</label>
+        <type>Text</type>
+        <length>255</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>City__c</fullName>
+        <label>City</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>State__c</fullName>
+        <label>State</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <label>Postal Code</label>
+        <type>Text</type>
+        <length>20</length>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Country__c</fullName>
+        <label>Country</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <!-- Customer attributes often shown on a "Customer 360" style view -->
+    <fields>
+        <fullName>Member_Since__c</fullName>
+        <label>Member Since</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Credit_Score__c</fullName>
+        <label>Credit Score</label>
+        <type>Number</type>
+        <precision>5</precision>
+        <scale>0</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>AUM__c</fullName>
+        <label>AUM</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Is_Spanish__c</fullName>
+        <label>Is Spanish</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+
+    <fields>
+        <fullName>Education__c</fullName>
+        <label>Education</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>High School</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Graduate</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Postgraduate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <fields>
+        <fullName>Persona__c</fullName>
+        <label>Persona</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Digital Explorer</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Value Seeker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Traditional</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <fields>
+        <fullName>Number_Of_Dependents__c</fullName>
+        <label>Number of Dependents</label>
+        <type>Number</type>
+        <precision>3</precision>
+        <scale>0</scale>
+        <required>false</required>
+    </fields>
+
+    <!-- Status -->
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <label>Is Active</label>
+        <type>Checkbox</type>
+        <defaultValue>true</defaultValue>
+    </fields>
+
+    <!-- Notes -->
+    <fields>
+        <fullName>Notes__c</fullName>
+        <label>Notes</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>5</visibleLines>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

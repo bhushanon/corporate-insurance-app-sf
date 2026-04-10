@@ -1,0 +1,18 @@
+<apex:page controller="EnrollmentController">
+    <apex:form>
+        <apex:pageBlock title="Enroll in Insurance">
+            <apex:pageMessages/>
+            <apex:pageMessages />
+            <apex:selectList value="{!selectedProduct}" size="1">
+                <apex:selectOptions value="{!availableProducts}" />
+            </apex:selectList>
+            <apex:commandButton value="Calculate Premium" action="{!calculatePremium}" rerender="premiumPanel" />
+
+            <apex:outputPanel id="premiumPanel">
+                <apex:outputText value="Total Premium: ₹{!totalPremium}" rendered="{!totalPremium != null}" />
+            </apex:outputPanel>
+
+            <apex:commandButton value="Confirm & Enroll" action="{!enroll}" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

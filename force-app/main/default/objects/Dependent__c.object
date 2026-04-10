@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Dependent</label>
+    <pluralLabel>Dependents</pluralLabel>
+
+    <nameField>
+        <label>Dependent Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- Legacy-style: dependents should not be broadly visible -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Customer__c (Lookup to Customer__c) -->
+    <fields>
+        <fullName>Customer__c</fullName>
+        <label>Customer</label>
+        <type>Lookup</type>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Dependents</relationshipLabel>
+        <relationshipName>Dependents</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Relationship__c -->
+    <fields>
+        <fullName>Relationship__c</fullName>
+        <label>Relationship</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Spouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Child</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Age__c -->
+    <fields>
+        <fullName>Age__c</fullName>
+        <label>Age</label>
+        <type>Number</type>
+        <precision>3</precision>
+        <scale>0</scale>
+        <required>false</required>
+    </fields>
+
+    <!-- Is_Beneficiary__c -->
+    <fields>
+        <fullName>Is_Beneficiary__c</fullName>
+        <label>Is Beneficiary</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+
+    <!-- Coverage_Eligibility__c -->
+    <fields>
+        <fullName>Coverage_Eligibility__c</fullName>
+        <label>Coverage Eligibility</label>
+        <type>Checkbox</type>
+        <defaultValue>true</defaultValue>
+    </fields>
+
+</CustomObject>

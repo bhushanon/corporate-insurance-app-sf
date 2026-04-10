@@ -1,0 +1,1 @@
+public class PolicyService{public static Policy__c create(Customer__c c,Insurance_Product__c p,Decimal pr){Policy__c po=new Policy__c(Customer__c=c.Id,Insurance_Product__c=p.Id,Policy_Number__c="POL-"+Datetime.now().getTime(),Status__c="Pending",Premium_Amount__c=pr); insert po; return po;} }

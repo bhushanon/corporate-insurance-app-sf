@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Import Error</label>
+    <pluralLabel>Import Errors</pluralLabel>
+
+    <nameField>
+        <label>Error Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- Legacy-style: import errors are admin-only -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Import_Batch__c (Lookup to Import_Batch__c) -->
+    <fields>
+        <fullName>Import_Batch__c</fullName>
+        <label>Import Batch</label>
+        <type>Lookup</type>
+        <referenceTo>Import_Batch__c</referenceTo>
+        <relationshipLabel>Import Errors</relationshipLabel>
+        <relationshipName>ImportErrors</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Row_Number__c -->
+    <fields>
+        <fullName>Row_Number__c</fullName>
+        <label>Row Number</label>
+        <type>Number</type>
+        <precision>10</precision>
+        <scale>0</scale>
+        <required>false</required>
+    </fields>
+
+    <!-- Source_Record_Key__c (e.g., Employee_Number/External Id from source file) -->
+    <fields>
+        <fullName>Source_Record_Key__c</fullName>
+        <label>Source Record Key</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <!-- Field_Name__c (API name or column name that failed) -->
+    <fields>
+        <fullName>Field_Name__c</fullName>
+        <label>Field Name</label>
+        <type>Text</type>
+        <length>80</length>
+        <required>false</required>
+    </fields>
+
+    <!-- Error_Code__c -->
+    <fields>
+        <fullName>Error_Code__c</fullName>
+        <label>Error Code</label>
+        <type>Text</type>
+        <length>60</length>
+        <required>false</required>
+    </fields>
+
+    <!-- Error_Message__c -->
+    <fields>
+        <fullName>Error_Message__c</fullName>
+        <label>Error Message</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>6</visibleLines>
+        <required>true</required>
+    </fields>
+
+    <!-- Severity__c -->
+    <fields>
+        <fullName>Severity__c</fullName>
+        <label>Severity</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Error</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Warning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Info</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Raw_Row_Data__c (optional – store the raw CSV row / JSON blob for triage) -->
+    <fields>
+        <fullName>Raw_Row_Data__c</fullName>
+        <label>Raw Row Data</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>6</visibleLines>
+        <required>false</required>
+    </fields>
+
+    <!-- Occurred_On__c -->
+    <fields>
+        <fullName>Occurred_On__c</fullName>
+        <label>Occurred On</label>
+        <type>DateTime</type>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

@@ -1,0 +1,162 @@
+{
+  "force-app\\main\\default\\classes\\BillingService.cls": {
+    "filename": "BillingService.cls",
+    "path": "force-app\\main\\default\\classes\\BillingService.cls",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "52c747": {
+        "user": "Bhushan Dongare",
+        "model": "gpt-4.1",
+        "timestamp": 1775806080,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.3.3",
+        "source": "chat",
+        "type": "insertCode",
+        "extraContext": {
+          "promptMessage": "ad531fab",
+          "files": "bb88d91f"
+        },
+        "hash": "1464cd8c",
+        "messageId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66",
+        "codeBlockId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66-Codeblock-1",
+        "isActive": false
+      },
+      "e399f6": {
+        "user": "Bhushan Dongare",
+        "model": "gpt-4.1",
+        "timestamp": 1775806089,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.3.3",
+        "source": "chat",
+        "type": "insertCode",
+        "extraContext": {
+          "promptMessage": "ad531fab",
+          "files": "bb88d91f"
+        },
+        "hash": "1464cd8c",
+        "messageId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66",
+        "codeBlockId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66-Codeblock-1",
+        "isActive": true
+      }
+    },
+    "lines": {
+      "0": {
+        "chunkId": "e399f6",
+        "hash": "48e52524",
+        "encoded": "public%20class%20BillingService%20%7B",
+        "prevChunkIds": []
+      },
+      "1": {
+        "chunkId": "e399f6",
+        "hash": "f84df266",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "2": {
+        "chunkId": "e399f6",
+        "hash": "c4e56c17",
+        "encoded": "*%20Generates%20a%20Billing__c%20record%20for%20the%20given%20Employer%20Id%20by%20summing%20active%20Policy__c%20Premium_Amount__c.",
+        "prevChunkIds": []
+      },
+      "3": {
+        "chunkId": "e399f6",
+        "hash": "f91559e4",
+        "encoded": "*%20@param%20emp%20Employer%20Id",
+        "prevChunkIds": []
+      },
+      "4": {
+        "chunkId": "e399f6",
+        "hash": "2755171d",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "5": {
+        "chunkId": "e399f6",
+        "hash": "d48054c7",
+        "encoded": "public%20static%20void%20gen(Id%20emp)%20%7B",
+        "prevChunkIds": []
+      },
+      "6": {
+        "chunkId": "e399f6",
+        "hash": "23649d14",
+        "encoded": "AggregateResult%20r%20=%20%5B",
+        "prevChunkIds": []
+      },
+      "7": {
+        "chunkId": "e399f6",
+        "hash": "45a6d6c7",
+        "encoded": "SELECT%20SUM(Premium_Amount__c)%20t",
+        "prevChunkIds": []
+      },
+      "8": {
+        "chunkId": "e399f6",
+        "hash": "c87c425f",
+        "encoded": "FROM%20Policy__c",
+        "prevChunkIds": []
+      },
+      "9": {
+        "chunkId": "e399f6",
+        "hash": "4705d190",
+        "encoded": "WHERE%20Customer__r.Employer__c%20=%20:emp",
+        "prevChunkIds": []
+      },
+      "10": {
+        "chunkId": "e399f6",
+        "hash": "1adb0e22",
+        "encoded": "AND%20Status__c%20=%20'Active'",
+        "prevChunkIds": []
+      },
+      "11": {
+        "chunkId": "e399f6",
+        "hash": "e4e2eb0a",
+        "encoded": "%5D;",
+        "prevChunkIds": []
+      },
+      "12": {
+        "chunkId": "e399f6",
+        "hash": "04e508a8",
+        "encoded": "insert%20new%20Billing__c(",
+        "prevChunkIds": []
+      },
+      "13": {
+        "chunkId": "e399f6",
+        "hash": "74af2103",
+        "encoded": "Employer__c%20=%20emp,",
+        "prevChunkIds": []
+      },
+      "14": {
+        "chunkId": "e399f6",
+        "hash": "bf8aecb7",
+        "encoded": "Total_Premium__c%20=%20(Decimal)%20r.get('t'),",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "e399f6",
+        "hash": "fe778c57",
+        "encoded": "Payment_Status__c%20=%20'Unpaid'",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "e399f6",
+        "hash": "86e715e4",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "e399f6",
+        "hash": "76477189",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "18": {
+        "chunkId": "e399f6",
+        "hash": "ee20bc2a",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      }
+    }
+  }
+}

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Insurance Enrollment</label>
+    <pluralLabel>Insurance Enrollments</pluralLabel>
+
+    <nameField>
+        <label>Enrollment Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- Enrollment records are sensitive (employee/customer linked) -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Employer__c (Lookup) -->
+    <fields>
+        <fullName>Employer__c</fullName>
+        <label>Employer</label>
+        <type>Lookup</type>
+        <referenceTo>Employer__c</referenceTo>
+        <relationshipLabel>Enrollments</relationshipLabel>
+        <relationshipName>Enrollments</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Customer__c (Lookup) - in this legacy model, Customer acts as the employee/member -->
+    <fields>
+        <fullName>Customer__c</fullName>
+        <label>Customer</label>
+        <type>Lookup</type>
+        <referenceTo>Customer__c</referenceTo>
+        <relationshipLabel>Enrollments</relationshipLabel>
+        <relationshipName>Enrollments</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Insurance_Product__c (Lookup) -->
+    <fields>
+        <fullName>Insurance_Product__c</fullName>
+        <label>Insurance Product</label>
+        <type>Lookup</type>
+        <referenceTo>Insurance_Product__c</referenceTo>
+        <relationshipLabel>Enrollments</relationshipLabel>
+        <relationshipName>Enrollments</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Policy__c (optional link once policy is issued) -->
+    <fields>
+        <fullName>Policy__c</fullName>
+        <label>Policy</label>
+        <type>Lookup</type>
+        <referenceTo>Policy__c</referenceTo>
+        <relationshipLabel>Enrollments</relationshipLabel>
+        <relationshipName>Enrollments</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <!-- Enrollment_Status__c -->
+    <fields>
+        <fullName>Enrollment_Status__c</fullName>
+        <label>Enrollment Status</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Submitted</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Coverage_Tier__c -->
+    <fields>
+        <fullName>Coverage_Tier__c</fullName>
+        <label>Coverage Tier</label>
+        <type>Picklist</type>
+        <required>false</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Employee Only</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee + Spouse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee + Child(ren)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Dates -->
+    <fields>
+        <fullName>Enrollment_Start_Date__c</fullName>
+        <label>Enrollment Start Date</label>
+        <type>Date</type>
+        <required>true</required>
+    </fields>
+
+    <fields>
+        <fullName>Enrollment_End_Date__c</fullName>
+        <label>Enrollment End Date</label>
+        <type>Date</type>
+        <required>false</required>
+    </fields>
+
+    <!-- Premium snapshot at enrollment time -->
+    <fields>
+        <fullName>Monthly_Premium__c</fullName>
+        <label>Monthly Premium</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Employer_Contribution__c</fullName>
+        <label>Employer Contribution</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Employee_Contribution__c</fullName>
+        <label>Employee Contribution</label>
+        <type>Currency</type>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+    </fields>
+
+    <!-- Flags -->
+    <fields>
+        <fullName>Includes_Dependents__c</fullName>
+        <label>Includes Dependents</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+
+    <fields>
+        <fullName>Includes_Addons__c</fullName>
+        <label>Includes Add-ons</label>
+        <type>Checkbox</type>
+        <defaultValue>false</defaultValue>
+    </fields>
+
+    <!-- Termination / rejection reason -->
+    <fields>
+        <fullName>Reason__c</fullName>
+        <label>Reason</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+    <!-- Audit-lite -->
+    <fields>
+        <fullName>Submitted_On__c</fullName>
+        <label>Submitted On</label>
+        <type>DateTime</type>
+        <required>false</required>
+    </fields>
+
+    <fields>
+        <fullName>Approved_On__c</fullName>
+        <label>Approved On</label>
+        <type>DateTime</type>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

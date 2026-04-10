@@ -1,0 +1,29 @@
+{
+  "force-app\\main\\default\\triggers\\ClaimTriggerHandler.cls": {
+    "filename": "ClaimTriggerHandler.cls",
+    "path": "force-app\\main\\default\\triggers\\ClaimTriggerHandler.cls",
+    "version": "1.2",
+    "contextFile": null,
+    "chunks": {
+      "e3fcd9": {
+        "user": "Bhushan Dongare",
+        "model": "gpt-4.1",
+        "timestamp": 1775806350,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.3.3",
+        "source": "chat",
+        "type": "toggleView",
+        "extraContext": {
+          "promptMessage": "40d8dacb",
+          "files": "70aea05e"
+        },
+        "hash": "1464cd8c",
+        "messageId": "system_5146ed80-34af-11f1-b668-3130aedb47eb",
+        "codeBlockId": "system_5146ed80-34af-11f1-b668-3130aedb47eb-Codeblock-1",
+        "isActive": false
+      }
+    },
+    "lines": {}
+  }
+}

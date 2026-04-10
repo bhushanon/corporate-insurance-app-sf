@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Policy History</label>
+    <pluralLabel>Policy Histories</pluralLabel>
+
+    <nameField>
+        <label>History Name</label>
+        <type>Text</type>
+    </nameField>
+
+    <deploymentStatus>Deployed</deploymentStatus>
+
+    <!-- Legacy-style: audit logs are sensitive -->
+    <sharingModel>Private</sharingModel>
+
+    <!-- Policy__c (Lookup to Policy__c) -->
+    <fields>
+        <fullName>Policy__c</fullName>
+        <label>Policy</label>
+        <type>Lookup</type>
+        <referenceTo>Policy__c</referenceTo>
+        <relationshipLabel>Policy History</relationshipLabel>
+        <relationshipName>PolicyHistory</relationshipName>
+        <required>true</required>
+    </fields>
+
+    <!-- Change_Type__c (Text/Picklist) -->
+    <fields>
+        <fullName>Change_Type__c</fullName>
+        <label>Change Type</label>
+        <type>Picklist</type>
+        <required>true</required>
+        <picklist>
+            <sorted>false</sorted>
+            <picklistValues>
+                <fullName>Status Change</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Premium Override</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Eligibility Exception</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Reinstatement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cancellation</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Lapse</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Endorsement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+        </picklist>
+    </fields>
+
+    <!-- Old_Value__c -->
+    <fields>
+        <fullName>Old_Value__c</fullName>
+        <label>Old Value</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+    <!-- New_Value__c -->
+    <fields>
+        <fullName>New_Value__c</fullName>
+        <label>New Value</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+    <!-- Changed_By__c (Lookup to User) -->
+    <fields>
+        <fullName>Changed_By__c</fullName>
+        <label>Changed By</label>
+        <type>Lookup</type>
+        <referenceTo>User</referenceTo>
+        <relationshipLabel>Policy History Changes</relationshipLabel>
+        <relationshipName>PolicyHistoryChanges</relationshipName>
+        <required>false</required>
+    </fields>
+
+    <!-- Changed_On__c -->
+    <fields>
+        <fullName>Changed_On__c</fullName>
+        <label>Changed On</label>
+        <type>DateTime</type>
+        <required>true</required>
+    </fields>
+
+    <!-- Reason__c -->
+    <fields>
+        <fullName>Reason__c</fullName>
+        <label>Reason</label>
+        <type>LongTextArea</type>
+        <length>32768</length>
+        <visibleLines>4</visibleLines>
+        <required>false</required>
+    </fields>
+
+</CustomObject>

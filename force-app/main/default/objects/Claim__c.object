@@ -1,270 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Claim</label>
-    <pluralLabel>Claims</pluralLabel>
-
     <nameField>
+        <displayFormat>CLM-{0000}</displayFormat>
         <label>Claim Name</label>
         <type>AutoNumber</type>
-        <displayFormat>CLM-{000000}</displayFormat>
     </nameField>
-
-    <deploymentStatus>Deployed</deploymentStatus>
-
-    <!-- Claims are sensitive -->
-    <sharingModel>Private</sharingModel>
-
-    <!-- Claim_Number__c (unique claim reference / external id) -->
-    <fields>
-        <fullName>Claim_Number__c</fullName>
-        <label>Claim Number</label>
-        <type>Text</type>
-        <length>50</length>
-        <required>true</required>
-        <unique>true</unique>
-        <caseSensitive>false</caseSensitive>
-        <externalId>true</externalId>
-    </fields>
-
-    <!-- Policy__c (attach claims to policies) -->
-    <fields>
-        <fullName>Policy__c</fullName>
-        <label>Policy</label>
-        <type>Lookup</type>
-        <referenceTo>Policy__c</referenceTo>
-        <relationshipLabel>Claims</relationshipLabel>
-        <relationshipName>Claims</relationshipName>
-        <required>false</required>
-    </fields>
-
-    <!-- Customer__c (claimant / insured) -->
-    <fields>
-        <fullName>Customer__c</fullName>
-        <label>Customer</label>
-        <type>Lookup</type>
-        <referenceTo>Customer__c</referenceTo>
-        <relationshipLabel>Claims</relationshipLabel>
-        <relationshipName>Claims</relationshipName>
-        <required>false</required>
-    </fields>
-
-    <!-- Employer__c (optional – for group programs / employer-sponsored) -->
-    <fields>
-        <fullName>Employer__c</fullName>
-        <label>Employer</label>
-        <type>Lookup</type>
-        <referenceTo>Employer__c</referenceTo>
-        <relationshipLabel>Claims</relationshipLabel>
-        <relationshipName>Claims</relationshipName>
-        <required>false</required>
-    </fields>
-
-    <!-- Claim_Status__c -->
-    <fields>
-        <fullName>Claim_Status__c</fullName>
-        <label>Claim Status</label>
-        <type>Picklist</type>
-        <required>true</required>
-        <picklist>
-            <sorted>false</sorted>
-            <picklistValues>
-                <fullName>New</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Under Review</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Info Required</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Approved</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Rejected</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Settled</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Closed</fullName>
-                <default>false</default>
-            </picklistValues>
-        </picklist>
-    </fields>
-
-    <!-- Claim_Type__c -->
-    <fields>
-        <fullName>Claim_Type__c</fullName>
-        <label>Claim Type</label>
-        <type>Picklist</type>
-        <required>false</required>
-        <picklist>
-            <sorted>false</sorted>
-            <picklistValues>
-                <fullName>Accident</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Health</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Life</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Motor</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Travel</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Critical Illness</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Other</fullName>
-                <default>true</default>
-            </picklistValues>
-        </picklist>
-    </fields>
-
-    <!-- Incident / reporting dates -->
-    <fields>
-        <fullName>Incident_Date__c</fullName>
-        <label>Incident Date</label>
-        <type>Date</type>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Reported_Date__c</fullName>
-        <label>Reported Date</label>
-        <type>Date</type>
-        <required>false</required>
-    </fields>
-
-    <!-- Financials -->
-    <fields>
-        <fullName>Claim_Amount__c</fullName>
-        <label>Claim Amount</label>
-        <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Approved_Amount__c</fullName>
-        <label>Approved Amount</label>
-        <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Settlement_Amount__c</fullName>
-        <label>Settlement Amount</label>
-        <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Settled_On__c</fullName>
-        <label>Settled On</label>
-        <type>DateTime</type>
-        <required>false</required>
-    </fields>
-
-    <!-- Ownership / workflow -->
-    <fields>
-        <fullName>Assigned_To__c</fullName>
-        <label>Assigned To</label>
-        <type>Lookup</type>
-        <referenceTo>User</referenceTo>
-        <relationshipLabel>Assigned Claims</relationshipLabel>
-        <relationshipName>AssignedClaims</relationshipName>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Priority__c</fullName>
-        <label>Priority</label>
-        <type>Picklist</type>
-        <required>false</required>
-        <picklist>
-            <sorted>false</sorted>
-            <picklistValues>
-                <fullName>Low</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Medium</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>High</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Urgent</fullName>
-                <default>false</default>
-            </picklistValues>
-        </picklist>
-    </fields>
-
-    <!-- Narrative -->
-    <fields>
-        <fullName>Description__c</fullName>
-        <label>Description</label>
-        <type>LongTextArea</type>
-        <length>32768</length>
-        <visibleLines>6</visibleLines>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Notes__c</fullName>
-        <label>Notes</label>
-        <type>LongTextArea</type>
-        <length>32768</length>
-        <visibleLines>6</visibleLines>
-        <required>false</required>
-    </fields>
-
-    <!-- Legacy / integration -->
-    <fields>
-        <fullName>Source_System__c</fullName>
-        <label>Source System</label>
-        <type>Text</type>
-        <length>40</length>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Source_System_Id__c</fullName>
-        <label>Source System Id</label>
-        <type>Text</type>
-        <length>80</length>
-        <required>false</required>
-    </fields>
-
-    <fields>
-        <fullName>Is_Legacy__c</fullName>
-        <label>Is Legacy</label>
-        <type>Checkbox</type>
-        <defaultValue>false</defaultValue>
-    </fields>
-
+    <pluralLabel>Claims</pluralLabel>
+    <searchLayouts></searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

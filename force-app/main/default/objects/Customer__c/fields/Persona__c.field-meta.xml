@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Persona__c</fullName>
+    <label>Persona</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Digital Explorer</fullName>
+                <default>false</default>
+                <label>Digital Explorer</label>
+            </value>
+            <value>
+                <fullName>Value Seeker</fullName>
+                <default>false</default>
+                <label>Value Seeker</label>
+            </value>
+            <value>
+                <fullName>Traditional</fullName>
+                <default>false</default>
+                <label>Traditional</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

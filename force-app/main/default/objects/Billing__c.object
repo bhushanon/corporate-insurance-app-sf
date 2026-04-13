@@ -1,125 +1,165 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Large</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <formFactor>Small</formFactor>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableLicensing>false</enableLicensing>
+    <enableReports>false</enableReports>
+    <enableSearch>false</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <externalSharingModel>Private</externalSharingModel>
     <label>Billing</label>
-    <pluralLabel>Billings</pluralLabel>
-
     <nameField>
         <label>Billing Name</label>
         <type>Text</type>
     </nameField>
-
-    <deploymentStatus>Deployed</deploymentStatus>
-
-    <!-- Legacy-style: billing is back-office controlled; keep visibility tight -->
-    <sharingModel>Private</sharingModel>
-
-    <!-- Employer__c (Lookup to Employer__c) -->
-    <fields>
-        <fullName>Employer__c</fullName>
-        <label>Employer</label>
-        <type>Lookup</type>
-        <referenceTo>Employer__c</referenceTo>
-        <relationshipLabel>Billings</relationshipLabel>
-        <relationshipName>Billings</relationshipName>
-        <required>true</required>
-    </fields>
-
-    <!-- Billing_Period_Start__c -->
-    <fields>
-        <fullName>Billing_Period_Start__c</fullName>
-        <label>Billing Period Start</label>
-        <type>Date</type>
-        <required>true</required>
-    </fields>
-
-    <!-- Billing_Period_End__c -->
-    <fields>
-        <fullName>Billing_Period_End__c</fullName>
-        <label>Billing Period End</label>
-        <type>Date</type>
-        <required>true</required>
-    </fields>
-
-    <!-- Total_Premium__c -->
-    <fields>
-        <fullName>Total_Premium__c</fullName>
-        <label>Total Premium</label>
-        <type>Currency</type>
-        <precision>18</precision>
-        <scale>2</scale>
-        <required>true</required>
-    </fields>
-
-    <!-- Payment_Status__c (Picklist: Unpaid, Partial, Paid, Overdue) -->
-    <fields>
-        <fullName>Payment_Status__c</fullName>
-        <label>Payment Status</label>
-        <type>Picklist</type>
-        <required>true</required>
-        <picklist>
-            <sorted>false</sorted>
-            <picklistValues>
-                <fullName>Unpaid</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Partial</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Paid</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Overdue</fullName>
-                <default>false</default>
-            </picklistValues>
-        </picklist>
-    </fields>
-
-    <!-- Reconciliation_Status__c (optional picklist) -->
-    <fields>
-        <fullName>Reconciliation_Status__c</fullName>
-        <label>Reconciliation Status</label>
-        <type>Picklist</type>
-        <required>false</required>
-        <picklist>
-            <sorted>false</sorted>
-            <picklistValues>
-                <fullName>Not Started</fullName>
-                <default>true</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>In Progress</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Reconciled</fullName>
-                <default>false</default>
-            </picklistValues>
-            <picklistValues>
-                <fullName>Disputed</fullName>
-                <default>false</default>
-            </picklistValues>
-        </picklist>
-    </fields>
-
-    <!-- Generated_Date__c -->
-    <fields>
-        <fullName>Generated_Date__c</fullName>
-        <label>Generated Date</label>
-        <type>DateTime</type>
-        <required>false</required>
-    </fields>
-
-    <!-- Notes__c -->
-    <fields>
-        <fullName>Notes__c</fullName>
-        <label>Notes</label>
-        <type>LongTextArea</type>
-        <length>32768</length>
-        <visibleLines>5</visibleLines>
-        <required>false</required>
-    </fields>
-
+    <pluralLabel>Billings</pluralLabel>
+    <searchLayouts></searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>

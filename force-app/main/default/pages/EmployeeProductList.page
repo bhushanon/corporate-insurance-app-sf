@@ -1,0 +1,13 @@
+<apex:page standardController="Insurance_Product__c">
+    <apex:pageMessages />
+    <h1>Product List</h1>
+    <apex:pageBlock title="Available Insurance Products">
+        <apex:pageBlockTable value="{!Insurance_Product__c}" var="prod">
+            <apex:column value="{!prod.Name}" headerValue="Product Name"/>
+            <apex:column value="{!prod.Description__c}" headerValue="Description"/>
+            <apex:column value="{!prod.Coverage_Type__c}" headerValue="Coverage Type"/>
+            <apex:column value="{!prod.Base_Premium__c}" headerValue="Premium"/>
+            <apex:column value="{!prod.Max_Premium__c}" headerValue="Premium"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

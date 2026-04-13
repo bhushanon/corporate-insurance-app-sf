@@ -1,0 +1,16 @@
+<apex:page standardController="Insurance_Product__c" recordSetVar="products">
+    <apex:pageMessages />
+    <h1>Product Setup</h1>
+    <apex:form >
+        <apex:pageBlock title="Insurance Products">
+            <apex:pageBlockTable value="{!products}" var="prod">
+                <apex:column value="{!prod.Name}" headerValue="Product Name"/>
+                <apex:column value="{!prod.Coverage_Type__c}" headerValue="Coverage Type"/>
+                <apex:column value="{!prod.Base_Premium__c}" headerValue="Premium"/>
+                <apex:column >
+                    <apex:commandLink value="View" action="{!view}" rerender=""/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

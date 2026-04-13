@@ -1,0 +1,18 @@
+<apex:page standardController="Billing__c" recordSetVar="billings">
+    <apex:pageMessages />
+    <h1>Billing</h1>
+    <apex:form >
+        <apex:pageBlock title="Billing Records">
+            <apex:pageBlockTable value="{!billings}" var="bill">
+                <apex:column value="{!bill.Name}" headerValue="Billing Number"/>
+                <apex:column value="{!bill.Employer__c}" headerValue="Employer"/>
+                <apex:column value="{!bill.Total_Premium__c}" headerValue="Amount"/>
+                <apex:column value="{!bill.Billing_Period_End__c}" headerValue="Billing Date"/>
+                <apex:column value="{!bill.Payment_Status__c}" headerValue="Status"/>
+                <apex:column >
+                    <apex:commandLink value="View" action="{!view}" rerender=""/>
+                </apex:column>
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

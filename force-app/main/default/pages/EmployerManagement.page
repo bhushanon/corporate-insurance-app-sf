@@ -1,0 +1,18 @@
+<apex:page standardController="Employer__c" recordSetVar="employers">
+    <apex:pageMessages />
+    <h1>Employer Management</h1>
+    <apex:form >
+        <apex:pageBlock title="Employers">
+            <apex:pageBlockTable value="{!employers}" var="emp">
+                <apex:column value="{!emp.Name}" headerValue="Employer Name"/>
+                <apex:column value="{!emp.Industry__c}" headerValue="Industry"/>
+                <apex:column value="{!emp.Billing_Contact_Email__c}" headerValue="Contact Person"/>
+                <apex:column value="{!emp.Primary_Contact_Phone__c}" headerValue="Phone"/>
+                <apex:column value="{!emp.State__c}" headerValue="State"/>
+                <apex:column >
+                     <apex:commandLink value="View" action="{!view}" rerender=""/>
+                </apex:column>
+            </apex:pageBlockTable>
+                    </apex:pageBlock>
+    </apex:form>
+</apex:page>

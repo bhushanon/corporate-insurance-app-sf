@@ -1,0 +1,19 @@
+<apex:page standardController="Insurance_Enrollment__c">
+    <apex:pageMessages />
+    <h1>Insurance Enrollment</h1>
+    <apex:form >
+        <apex:pageBlock title="Enroll in a Product">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Insurance_Enrollment__c.Employer__c}" required="true"/>
+                <apex:inputField value="{!Insurance_Enrollment__c.Insurance_Product__c}" required="true"/>
+                <apex:inputField value="{!Insurance_Enrollment__c.Insurance_Product__c}" required="true"/>
+                <apex:inputField value="{!Insurance_Enrollment__c.Enrollment_Start_Date__c}" required="true"/>
+                <apex:inputField value="{!Insurance_Enrollment__c.Enrollment_End_Date__c}" required="true"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Enroll"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,123 @@
+<apex:page >
+    <apex:sectionHeader title="Admin Pages" subtitle="Quick Access Sections"/>
+    <style>
+        .admin-layout {
+            display: flex;
+            min-height: 80vh;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .admin-menu {
+            width: 260px;
+            background: #f4f6f9;
+            border-right: 2px solid #0176d3;
+            padding: 2rem 0 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .admin-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .admin-menu-link {
+            display: block;
+            padding: 1.25rem 2rem;
+            color: #032d60;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            background: none;
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .admin-menu-link.active,
+        .admin-menu-link:focus,
+        .admin-menu-link:hover {
+            background: #eaf5fe;
+            border-left: 4px solid #0176d3;
+            outline: 2px solid #032d60;
+        }
+        .admin-content {
+            flex: 1;
+            min-width: 0;
+            background: #f9fafb;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .admin-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+            min-height: 70vh;
+            background: #fff;
+        }
+        @media (max-width: 800px) {
+            .admin-layout { flex-direction: column; }
+            .admin-menu { width: 100%; border-right: none; border-bottom: 2px solid #0176d3; }
+            .admin-content { min-height: 400px; }
+        }
+    </style>
+    <script>
+        function loadAdminSection(url, linkId) {
+            var iframe = document.getElementById('adminContentFrame');
+            iframe.src = url;
+            // Remove active from all links
+            var links = document.querySelectorAll('.admin-menu-link');
+            links.forEach(function(link) { link.classList.remove('active'); });
+            // Add active to clicked link
+            var activeLink = document.getElementById(linkId);
+            if (activeLink) activeLink.classList.add('active');
+        }
+        // Set default section on page load
+        window.onload = function() {
+            var defaultUrl = "https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployerManagement";
+            loadAdminSection(defaultUrl, "menu-employer");
+        };
+    </script>
+    <div class="admin-layout" role="main">
+        <nav class="admin-menu" aria-label="Admin Navigation">
+            <ul class="admin-menu-list">
+                <li>
+                    <a id="menu-employer" class="admin-menu-link" href="javascript:void(0);" 
+                       onclick="loadAdminSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployerManagement','menu-employer');"
+                       aria-label="Go to Employer Management" tabindex="0">
+                        Employer Management
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-product" class="admin-menu-link" href="javascript:void(0);" 
+                       onclick="loadAdminSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/ProductSetup','menu-product');"
+                       aria-label="Go to Product Setup" tabindex="0">
+                        Product Setup
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-claims" class="admin-menu-link" href="javascript:void(0);" 
+                       onclick="loadAdminSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/ClaimsProcessing','menu-claims');"
+                       aria-label="Go to Claims Processing" tabindex="0">
+                        Claim Processing
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-billing" class="admin-menu-link" href="javascript:void(0);" 
+                       onclick="loadAdminSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/Billing','menu-billing');"
+                       aria-label="Go to Billing" tabindex="0">
+                        Billing
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section class="admin-content" aria-label="Admin Content">
+            <iframe id="adminContentFrame" class="admin-iframe" title="Admin Section Content"></iframe>
+        </section>
+    </div>
+</apex:page>

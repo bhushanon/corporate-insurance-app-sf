@@ -22,6 +22,9 @@
   "promptMessage": {
     "ad531fab": {
       "value": "format these apex classes"
+    },
+    "a71e7156": {
+      "value": "Apex Core Logic for same app\nBuild Utility Classes:\n1. Premium Calculation\nBase + Add-ons\nOverride logic\n \n2. Eligibility Service\nEmployer active\nProduct valid\nAdd-on mapping\n \n3. Policy Service\nCreate policy\nActivate\nCancel / Lapse / Reinstate\n \n4. Claim Service\nSubmit\nApprove / Reject\nSettle\n \n5. Billing Service\nAggregate premiums\nGenerate billing"
     }
   },
   "localPrompts": {},

@@ -1,0 +1,123 @@
+<apex:page >
+    <apex:sectionHeader title="Employee Page" subtitle="Quick Access Sections"/>
+    <style>
+        .employee-layout {
+            display: flex;
+            min-height: 80vh;
+            max-width: 1200px;
+            margin: 2rem auto;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .employee-menu {
+            width: 260px;
+            background: #f4f6f9;
+            border-right: 2px solid #0176d3;
+            padding: 2rem 0 2rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        .employee-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+        .employee-menu-link {
+            display: block;
+            padding: 1.25rem 2rem;
+            color: #032d60;
+            font-size: 1.15rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-left: 4px solid transparent;
+            background: none;
+            transition: background 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+        .employee-menu-link.active,
+        .employee-menu-link:focus,
+        .employee-menu-link:hover {
+            background: #eaf5fe;
+            border-left: 4px solid #0176d3;
+            outline: 2px solid #032d60;
+        }
+        .employee-content {
+            flex: 1;
+            min-width: 0;
+            background: #f9fafb;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .employee-iframe {
+            flex: 1;
+            width: 100%;
+            border: none;
+            min-height: 70vh;
+            background: #fff;
+        }
+        @media (max-width: 800px) {
+            .employee-layout { flex-direction: column; }
+            .employee-menu { width: 100%; border-right: none; border-bottom: 2px solid #0176d3; }
+            .employee-content { min-height: 400px; }
+        }
+    </style>
+    <script>
+        function loadEmployeeSection(url, linkId) {
+            var iframe = document.getElementById('employeeContentFrame');
+            iframe.src = url;
+            // Remove active from all links
+            var links = document.querySelectorAll('.employee-menu-link');
+            links.forEach(function(link) { link.classList.remove('active'); });
+            // Add active to clicked link
+            var activeLink = document.getElementById(linkId);
+            if (activeLink) activeLink.classList.add('active');
+        }
+        // Set default section on page load
+        window.onload = function() {
+            var defaultUrl = "https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployeeProductList";
+            loadEmployeeSection(defaultUrl, "menu-product-list");
+        };
+    </script>
+    <div class="employee-layout" role="main">
+        <nav class="employee-menu" aria-label="Employee Navigation">
+            <ul class="employee-menu-list">
+                <li>
+                    <a id="menu-product-list" class="employee-menu-link" href="javascript:void(0);"
+                       onclick="loadEmployeeSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployeeProductList','menu-product-list');"
+                       aria-label="Go to Product List" tabindex="0">
+                        Product List
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-enrollment" class="employee-menu-link" href="javascript:void(0);"
+                       onclick="loadEmployeeSection('https://orgfarm-b145090236-dev-ed.develop.my.salesforce-setup.com/apex/EmployeeEnrollment','menu-enrollment');"
+                       aria-label="Go to Enrollment Page" tabindex="0">
+                        Enrollment Page
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-policy-dashboard" class="employee-menu-link" href="javascript:void(0);"
+                       onclick="loadEmployeeSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployeePolicyDashboard','menu-policy-dashboard');"
+                       aria-label="Go to Policy Dashboard" tabindex="0">
+                        Policy Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a id="menu-claim-page" class="employee-menu-link" href="javascript:void(0);"
+                       onclick="loadEmployeeSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/EmployeeClaimSubmit','menu-claim-page');"
+                       aria-label="Go to Claim Page" tabindex="0">
+                        Claim Page
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <section class="employee-content" aria-label="Employee Content">
+            <iframe id="employeeContentFrame" class="employee-iframe" title="Employee Section Content"></iframe>
+        </section>
+    </div>
+</apex:page>

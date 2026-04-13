@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Insurance_Enrollment_Add_on__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <label>Insurance Enrollment Add-on</label>
+    <referenceTo>Insurance_Enrollment_Add_on__c</referenceTo>
+    <relationshipLabel>Insurance Add-on</relationshipLabel>
+    <relationshipName>Insurance_Enrollment_Add_ons</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

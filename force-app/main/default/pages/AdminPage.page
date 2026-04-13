@@ -104,7 +104,7 @@
                     <a id="menu-claims" class="admin-menu-link" href="javascript:void(0);" 
                        onclick="loadAdminSection('https://orgfarm-b145090236-dev-ed--c.develop.vf.force.com/apex/ClaimsProcessing','menu-claims');"
                        aria-label="Go to Claims Processing" tabindex="0">
-                        Claims Processing
+                        Claim Processing
                     </a>
                 </li>
                 <li>

@@ -40,120 +40,171 @@
         "messageId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66",
         "codeBlockId": "system_bf5f6550-34ae-11f1-9de1-b79244267b66-Codeblock-1",
         "isActive": true
+      },
+      "233a0b": {
+        "user": "Akshay Murlidhar Kakpure",
+        "model": "gpt-4.1",
+        "timestamp": 1776074646,
+        "platform": "VisualStudioCode",
+        "product": "AIPP",
+        "productVersion": "2.3.3",
+        "source": "chat",
+        "type": "pasteCode",
+        "extraContext": {
+          "promptMessage": "a71e7156"
+        },
+        "hash": "0aaea2b9",
+        "messageId": "system_a6a26780-3718-11f1-97f3-8793fcb1bae3",
+        "codeBlockId": "system_a6a26780-3718-11f1-97f3-8793fcb1bae3-Codeblock-5",
+        "isActive": true
       }
     },
     "lines": {
       "0": {
-        "chunkId": "e399f6",
-        "hash": "48e52524",
-        "encoded": "public%20class%20BillingService%20%7B",
+        "chunkId": "233a0b",
+        "hash": "aaadb8fd",
+        "encoded": "public%20with%20sharing%20class%20BillingService%20%7B",
         "prevChunkIds": []
       },
       "1": {
-        "chunkId": "e399f6",
+        "chunkId": "233a0b",
         "hash": "f84df266",
         "encoded": "/**",
         "prevChunkIds": []
       },
       "2": {
-        "chunkId": "e399f6",
-        "hash": "c4e56c17",
-        "encoded": "*%20Generates%20a%20Billing__c%20record%20for%20the%20given%20Employer%20Id%20by%20summing%20active%20Policy__c%20Premium_Amount__c.",
+        "chunkId": "233a0b",
+        "hash": "4e9155d2",
+        "encoded": "*%20Aggregates%20premiums%20for%20a%20list%20of%20policies.",
         "prevChunkIds": []
       },
       "3": {
-        "chunkId": "e399f6",
-        "hash": "f91559e4",
-        "encoded": "*%20@param%20emp%20Employer%20Id",
-        "prevChunkIds": []
+        "chunkId": "233a0b",
+        "hash": "7c9e86a6",
+        "encoded": "*/",
+        "prevChunkIds": [
+          "e399f6"
+        ]
       },
       "4": {
-        "chunkId": "e399f6",
-        "hash": "2755171d",
-        "encoded": "*/",
-        "prevChunkIds": []
+        "chunkId": "233a0b",
+        "hash": "8ca3099a",
+        "encoded": "public%20static%20Decimal%20aggregatePremiums(List%3CId%3E%20policyIds)%20%7B",
+        "prevChunkIds": [
+          "e399f6"
+        ]
       },
       "5": {
-        "chunkId": "e399f6",
-        "hash": "d48054c7",
-        "encoded": "public%20static%20void%20gen(Id%20emp)%20%7B",
+        "chunkId": "233a0b",
+        "hash": "b729d7c1",
+        "encoded": "if%20(policyIds%20==%20null%20%7C%7C%20policyIds.isEmpty())%20return%200;",
         "prevChunkIds": []
       },
       "6": {
-        "chunkId": "e399f6",
-        "hash": "23649d14",
-        "encoded": "AggregateResult%20r%20=%20%5B",
-        "prevChunkIds": []
-      },
-      "7": {
-        "chunkId": "e399f6",
-        "hash": "45a6d6c7",
-        "encoded": "SELECT%20SUM(Premium_Amount__c)%20t",
+        "chunkId": "233a0b",
+        "hash": "fae5d19c",
+        "encoded": "AggregateResult%20ar%20=%20%5B",
         "prevChunkIds": []
       },
       "8": {
-        "chunkId": "e399f6",
+        "chunkId": "233a0b",
         "hash": "c87c425f",
         "encoded": "FROM%20Policy__c",
         "prevChunkIds": []
       },
-      "9": {
-        "chunkId": "e399f6",
-        "hash": "4705d190",
-        "encoded": "WHERE%20Customer__r.Employer__c%20=%20:emp",
-        "prevChunkIds": []
-      },
       "10": {
-        "chunkId": "e399f6",
-        "hash": "1adb0e22",
-        "encoded": "AND%20Status__c%20=%20'Active'",
-        "prevChunkIds": []
-      },
-      "11": {
-        "chunkId": "e399f6",
-        "hash": "e4e2eb0a",
+        "chunkId": "233a0b",
+        "hash": "d048eb5f",
         "encoded": "%5D;",
         "prevChunkIds": []
       },
+      "11": {
+        "chunkId": "233a0b",
+        "hash": "254e05e2",
+        "encoded": "return%20(Decimal)ar.get('total');",
+        "prevChunkIds": []
+      },
       "12": {
-        "chunkId": "e399f6",
-        "hash": "04e508a8",
-        "encoded": "insert%20new%20Billing__c(",
-        "prevChunkIds": []
-      },
-      "13": {
-        "chunkId": "e399f6",
-        "hash": "74af2103",
-        "encoded": "Employer__c%20=%20emp,",
-        "prevChunkIds": []
-      },
-      "14": {
-        "chunkId": "e399f6",
-        "hash": "bf8aecb7",
-        "encoded": "Total_Premium__c%20=%20(Decimal)%20r.get('t'),",
-        "prevChunkIds": []
-      },
-      "15": {
-        "chunkId": "e399f6",
-        "hash": "fe778c57",
-        "encoded": "Payment_Status__c%20=%20'Unpaid'",
-        "prevChunkIds": []
-      },
-      "16": {
-        "chunkId": "e399f6",
-        "hash": "86e715e4",
-        "encoded": ");",
-        "prevChunkIds": []
-      },
-      "17": {
-        "chunkId": "e399f6",
-        "hash": "76477189",
+        "chunkId": "233a0b",
+        "hash": "6a3f2143",
         "encoded": "%7D",
         "prevChunkIds": []
       },
+      "14": {
+        "chunkId": "233a0b",
+        "hash": "f847a38b",
+        "encoded": "/**",
+        "prevChunkIds": []
+      },
+      "15": {
+        "chunkId": "233a0b",
+        "hash": "8bdb2a0a",
+        "encoded": "*%20Generates%20a%20billing%20record%20for%20a%20customer.",
+        "prevChunkIds": []
+      },
+      "16": {
+        "chunkId": "233a0b",
+        "hash": "7ca1406f",
+        "encoded": "*/",
+        "prevChunkIds": []
+      },
+      "17": {
+        "chunkId": "233a0b",
+        "hash": "d1502de7",
+        "encoded": "public%20static%20Billing__c%20generateBilling(Id%20customerId,%20Decimal%20amount,%20Date%20billDate)%20%7B",
+        "prevChunkIds": []
+      },
       "18": {
+        "chunkId": "233a0b",
+        "hash": "a988fc36",
+        "encoded": "if%20(customerId%20==%20null%20%7C%7C%20amount%20==%20null%20%7C%7C%20amount%20%3C=%200)%20%7B",
+        "prevChunkIds": []
+      },
+      "19": {
+        "chunkId": "233a0b",
+        "hash": "c187e7a3",
+        "encoded": "throw%20new%20AuraHandledException('Invalid%20billing%20parameters.');",
+        "prevChunkIds": []
+      },
+      "20": {
         "chunkId": "e399f6",
-        "hash": "ee20bc2a",
+        "hash": "acbf036f",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "21": {
+        "chunkId": "233a0b",
+        "hash": "8a5ac23f",
+        "encoded": "Billing__c%20bill%20=%20new%20Billing__c(",
+        "prevChunkIds": []
+      },
+      "26": {
+        "chunkId": "233a0b",
+        "hash": "5a1b898d",
+        "encoded": ");",
+        "prevChunkIds": []
+      },
+      "27": {
+        "chunkId": "233a0b",
+        "hash": "15fd272b",
+        "encoded": "insert%20bill;",
+        "prevChunkIds": []
+      },
+      "28": {
+        "chunkId": "233a0b",
+        "hash": "889f9522",
+        "encoded": "return%20bill;",
+        "prevChunkIds": []
+      },
+      "29": {
+        "chunkId": "233a0b",
+        "hash": "7721e417",
+        "encoded": "%7D",
+        "prevChunkIds": []
+      },
+      "30": {
+        "chunkId": "233a0b",
+        "hash": "cfdac52c",
         "encoded": "%7D",
         "prevChunkIds": []
       }

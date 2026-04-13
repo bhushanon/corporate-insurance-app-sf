@@ -1,0 +1,19 @@
+<apex:page standardController="Claim__c" recordSetVar="claims">
+    <apex:pageMessages />
+    <h1>Claims Processing</h1>
+    <apex:form >
+        <apex:pageBlock title="Claims">
+            <apex:pageBlockTable value="{!claims}" var="claim">
+                <apex:column value="{!claim.Name}" headerValue="Claim Number"/>
+                <apex:column value="{!claim.Policy__c}" headerValue="Policy"/>
+                <apex:column value="{!claim.Claim_Type__c}" headerValue="Type"/>
+                <apex:column value="{!claim.Claim_Amount__c}" headerValue="Amount"/>
+                <apex:column value="{!claim.Claim_Status__c}" headerValue="Status"/>
+                <apex:column >
+                    <apex:commandLink value="View" action="{!view}" rerender=""/>
+                </apex:column>
+            </apex:pageBlockTable>
+            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

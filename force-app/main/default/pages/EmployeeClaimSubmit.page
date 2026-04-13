@@ -1,1 +1,18 @@
-<apex:page><apex:pageBlock title="EmployeeClaimSubmit"><p>Legacy Visualforce Page</p></apex:pageBlock></apex:page>
+<apex:page standardController="Claim__c">
+    <apex:pageMessages />
+    <h1>Submit a Claim</h1>
+    <apex:form >
+        <apex:pageBlock title="Claim Submission">
+            <apex:pageBlockSection >
+                <apex:inputField value="{!Claim__c.Policy__c}" required="true"/>
+                <apex:inputField value="{!Claim__c.Claim_Type__c}" required="true"/>
+              
+                <apex:inputField value="{!Claim__c.Description__c}"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!save}" value="Submit"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

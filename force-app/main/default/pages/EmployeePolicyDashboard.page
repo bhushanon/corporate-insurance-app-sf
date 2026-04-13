@@ -1,0 +1,10 @@
+<apex:page standardController="Policy__c">
+    <apex:pageMessages />
+    <h1>Policy Dashboard</h1>
+    <apex:pageBlock title="Your Policies">
+        <apex:pageBlockTable value="{!Policy__c}" var="policy">
+            <apex:column value="{!policy.Name}" headerValue="Policy Number"/>
+            <apex:column value="{!policy.Coverage_Amount__c}" headerValue="Coverage Amount"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
